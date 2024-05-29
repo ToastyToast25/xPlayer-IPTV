@@ -13,16 +13,16 @@ include("Xtream_api.php");
          <!-- HEADER -->
          <div class="row header-top">
             <div class="col-lg-3 col-md-6 col-sm-12">
-               <a class="main-logo" href="index.php"><img style="height:180px;" src="assets/<?php echo $template; ?>/img/logo-player.png" class="main-logo" alt="<?php echo NOME_IPTV; ?>" title="<?php echo NOME_IPTV; ?>"></a>
+               <a class="main-logo" href="index.php"><img style="height:180px;" src="assets/<?php echo $template; ?>/img/logo-player.png" class="main-logo" alt="<?php echo IPTV_NAME; ?>" title="<?php echo IPTV_NAME; ?>"></a>
             </div>
             <div class="col-lg-6 hidden-md text-center hidden-sm hidden-xs">
                
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12">
                <div class="right-center">
-               <?php if(ATIVAR_TESTE == 1) { ?>
-                  <button type="button" class="access-btn" data-toggle="modal" data-target="#enquirypopup">Teste Grátis Agora</button>
-                  <?php } ?>
+               <?php if(ENABLE_TEST == 1) { ?>
+                  <button type="button" class="access-btn" data-toggle="modal" data-target="#enquirypopup">Free Test Now</button>
+               <?php } ?>
                </div>
             </div>
          </div>
@@ -41,20 +41,19 @@ include("Xtream_api.php");
                         <div class="login-register-content">
                            <div class="row">
                               <div class="col-md-12 text-center login-header">
-                                 <h2 class="title main-head-title"><?php echo HOME_BEMVINDO; ?></h2>
-                                 <p><?php echo HOME_TEXTO_BEMVINDO; ?></p>
-                               
+                                 <h2 class="title main-head-title"><?php echo HOME_WELCOME; ?></h2>
+                                 <p><?php echo HOME_WELCOME_TEXT; ?></p>
                               </div>
                               
                               <div class="col-md-12 login-header">
         <?php if($_GET['sess'] == 'teste') { ?>
-        <div class="alert alert-danger"><b>OCORREU UM ERRO</b> Desculpe você já solicitou um teste em nosso sistema.</div>                         
+        <div class="alert alert-danger"><b>AN ERROR OCCURRED</b> Sorry, you have already requested a test in our system.</div>                         
         <?php } ?>
         <?php if($_GET['sess'] == 'block') { ?>
-        <div class="alert alert-danger"><b>USUÁRIO BLOQUEADO</b> Desculpe seu usuário esta bloqueado ou vencido entre em contato com o suporte.</div> 
+        <div class="alert alert-danger"><b>USER BLOCKED</b> Sorry, your user is blocked or expired. Please contact support.</div> 
         <?php } ?>
         <?php if($_GET['sess'] == 'erro') { ?>
-        <div class="alert alert-danger"><b>DADOS INVÁLIDOS</b> Desculpe não foi possível realizar seu login, dados não encontrados no sistema.</div> 
+        <div class="alert alert-danger"><b>INVALID DATA</b> Sorry, it was not possible to log in, data not found in the system.</div> 
         <?php } ?>      
                             
                               </div>
@@ -68,16 +67,16 @@ include("Xtream_api.php");
                          <label><?php echo HOME_TXT_USER; ?></label>
                                        <div class="input-group">
                                           <span class="fa fa-user login-inputicon"></span>
-                                          <input type="text" style="color:#000000;" name="usuario" required>
+                                          <input type="text" style="color:#000000;" name="username" required>
                                        </div>
                                        <label><?php echo HOME_TXT_PASS; ?></label>
                                        <div class="input-group">
                                           <span class="fa fa-lock login-inputicon"></span>
-                                          <input type="password" style="color:#000000;" name="senha" required> 
+                                          <input type="password" style="color:#000000;" name="password" required> 
                                        </div>
                                        
                                        <div class="login-btn-box">
-                                          <button class="access-btn" type="submit"><?php echo HOME_BOTAO_LOGIN; ?></button>
+                                          <button class="access-btn" type="submit"><?php echo HOME_BUTTON_LOGIN; ?></button>
                                        </div>
                                     </form>
                                  </div>
@@ -102,33 +101,31 @@ include("Xtream_api.php");
 
       <?php include("inc/scripts.php"); ?>
       
-      
-      
       <!-- MODAL -->
-      <?php if(ATIVAR_TESTE == 1) { ?>
+      <?php if(ENABLE_TEST == 1) { ?>
       <div id="enquirypopup" class="modal fade in " role="dialog">
          <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content row">
                <div class="modal-header custom-modal-header">
                   <button type="button" class="close" data-dismiss="modal">×</button>
-                  <h2 class="icon"><?php echo HOME_TXT_TESTE; ?></h2>
-                  <p><?php echo HOME_TXT_TESTE_DESC; ?><br> por <?php echo HORAS; ?> <?php echo HOME_TXT_HORAS; ?></p>
+                  <h2 class="icon"><?php echo HOME_TXT_TEST; ?></h2>
+                  <p><?php echo HOME_TXT_TEST_DESC; ?><br> for <?php echo HOURS; ?> <?php echo HOME_TXT_HOURS; ?></p>
                </div>
                <div class="modal-body">
                   <form name="info_form" class="form-inline" action="" method="POST">
-                  <input type="hidden" name="op" value="criarteste">
+                  <input type="hidden" name="op" value="create_test">
                      <div class="form-group col-sm-12">
-                        <input type="text" style="color:#000000;" class="form-control" name="nome" id="nome" placeholder="<?php echo HOME_CAMPO_NOME; ?>" required>
+                        <input type="text" style="color:#000000;" class="form-control" name="name" id="name" placeholder="<?php echo HOME_FIELD_NAME; ?>" required>
                      </div>
                      <div class="form-group col-sm-12">
-                        <input type="email" style="color:#000000;" class="form-control" name="email" id="email" placeholder="<?php echo HOME_CAMPO_EMAIL; ?>" required>
+                        <input type="email" style="color:#000000;" class="form-control" name="email" id="email" placeholder="<?php echo HOME_FIELD_EMAIL; ?>" required>
                      </div>
                      <div class="form-group col-sm-12">
-                        <input type="text" style="color:#000000;" class="form-control" name="wa" id="wa" placeholder="<?php echo HOME_CAMPO_WA; ?>">
+                        <input type="text" style="color:#000000;" class="form-control" name="wa" id="wa" placeholder="<?php echo HOME_FIELD_WA; ?>">
                      </div>
                      <div class="form-group col-sm-12">
-                        <button class="subscribe-btn pull-right" type="submit" title="Enviar"><?php echo HOME_BOTAO_TESTE; ?></button>
+                        <button class="subscribe-btn pull-right" type="submit" title="Send"><?php echo HOME_BUTTON_TEST; ?></button>
                      </div>
                   </form>
                </div>
@@ -138,3 +135,4 @@ include("Xtream_api.php");
       <?php } ?>
    </body>
 </html>
+
