@@ -1,79 +1,77 @@
 <?php
 
-
 // URL DNS
-define('IP','http://domain.com:80'); 
+define('IP', 'http://domain.com:80'); 
 
-//pink, aqua, orange or blue themes
+// pink, aqua, orange or blue themes
 $template = 'blue'; 
 
 // WhatsApp Number
-define("WHATSAPP", ''); //Numero WhatsApp
+define("WHATSAPP", ''); // WhatsApp Number
 
 // Website 
-define("NOME_IPTV", 'WebPlayer'); 
+define("IPTV_NAME", 'WebPlayer'); 
 
 // MercadoPago Integration
 // Create payment links in your account and put them here
 
-define("LINK_PAGAR1", ''); // Link 1
-define("LINK_PAGAR2", ''); // Link 2
-define("LINK_PAGAR3", ''); // Link 3
-define("LINK_PAGAR4", ''); // Link 4
+define("PAYMENT_LINK1", ''); // Link 1
+define("PAYMENT_LINK2", ''); // Link 2
+define("PAYMENT_LINK3", ''); // Link 3
+define("PAYMENT_LINK4", ''); // Link 4
 
-$nome1 = "Mensal";
-$valor1 = "29.90"; // Valor Mensal
-$nome2 = "Trimestral";
-$valor2 = "79.90"; // Valor Mensal
-$nome3 = "Semestral";
-$valor3 = "129.90"; // Valor Mensal
-$nome4 = "Anual";
-$valor4 = "199.90"; // Valor Mensal
+$name1 = "Monthly";
+$value1 = "29.90"; // Monthly Value
+$name2 = "Quarterly";
+$value2 = "79.90"; // Quarterly Value
+$name3 = "Semiannual";
+$value3 = "129.90"; // Semiannual Value
+$name4 = "Annual";
+value4 = "199.90"; // Annual Value
 
-// Settings Xtream-Codes CMS 
+// Xtream-Codes CMS Settings 
 
-define("ATIVAR_TESTE", '0');  // 1 = YES / 0 = NO
-define("HORAS", '2');  // Trial Duration in hours
-define("XTREAM_URL", 'https://cms-eu.xtream-codes.com/'); //URL CMS do Xtream-Codes
-define("XTREAM_USER", ''); //Usuário do Xtream-Codes
-define("XTREAM_PWD", ''); //Senha do Xtream-Codes
-define("XTREAM_PLANO", '1'); //Número do Plano do Xtream-Codes em caso de dúvidas contate o suporte.
-define("ATIVA_BLOQUEIO_TESTE", '0'); // Se Ativado (1) = Bloqueia novos cadastros apartir do computador do usuário por 30 dias, evitar testes a todo momento
+define("ENABLE_TEST", '0');  // 1 = YES / 0 = NO
+define("HOURS", '2');  // Trial Duration in hours
+define("XTREAM_URL", 'https://cms-eu.xtream-codes.com/'); // Xtream-Codes CMS URL
+define("XTREAM_USER", ''); // Xtream-Codes User
+define("XTREAM_PASSWORD", ''); // Xtream-Codes Password
+define("XTREAM_PLAN", '1'); // Xtream-Codes Plan Number, contact support for details
+define("ENABLE_TEST_BLOCK", '0'); // If Enabled (1) = Blocks new registrations from the user's computer for 30 days, preventing frequent tests
 
-// CONFIGURAÇÕES DO EMAIL SMTP ENVIO DE TESTES:
-define("SMTP_HOST", 'mail.revenda.com');
+// SMTP Email Settings for Test Sending
+define("SMTP_HOST", 'mail.provider.com');
 define("SMTP_USER", '');
-define("SMTP_SENHA", '');
-define("SMTP_PORTA", '587');
-define("SMTP_SEGURANCA", 'tls');
-define("EMAIL_ASSUNTO", 'Bem Vindo ao ITV - WebPlayer');
-define("EMAIL_REVENDA", 'contato@revenda.com');
-define("NOME_REVENDA", 'WebPlayer');
+define("SMTP_PASSWORD", '');
+define("SMTP_PORT", '587');
+define("SMTP_SECURITY", 'tls');
+define("EMAIL_SUBJECT", 'Welcome to ITV - WebPlayer');
+define("EMAIL_PROVIDER", 'contact@provider.com');
+define("PROVIDER_NAME", 'WebPlayer');
 
 // Adults categories
-define("AVISO_ADULTOS_CANAL", 'XXX: ADULTOS'); // Should be the same as XC
-define("AVISO_ADULTOS_FILME", 'FILMES: ADULTOS'); // Should be the same as XC
-// Você pode ver esta nome quando o sistema gerar as categorias
+define("WARNING_ADULT_CHANNEL", 'XXX: ADULTS'); // Should be the same as XC
+define("WARNING_ADULT_MOVIE", 'MOVIES: ADULTS'); // Should be the same as XC
+// You can see this name when the system generates the categories
 
-
-// ATENÇÃO AO EDITAR O CORPO DO EMAIL
-// Dont change the variables
+// ATTENTION WHEN EDITING THE EMAIL BODY
+// Don't change the variables
 //
-// %VENCIMENTO%, %NOME%, %USUARIO%, %SENHA%
+// %EXPIRATION%, %NAME%, %USERNAME%, %PASSWORD%
 //
 // Ask a developer for help if needed.
 
-
-define("CORPO_EMAIL", "Olá %NOME%, seu teste foi criado com sucesso.<br><br>
-    Você pode fazer seu login em nosso webplayer utilizando os seguintes dados:<br>
+define("EMAIL_BODY", "Hello %NAME%, your test has been successfully created.<br><br>
+    You can log in to our web player using the following details:<br>
     <br>
-    Usuário: <b>%USUARIO%</b> <br>
-    Senha: <b>%SENHA%</b> <br><br><br>
-    Você também pode testar nossa lista fazendo o download abaixo:<br><br>
-    %URL_LISTA%<br><br><br>
-    Aproveite seu teste é valido até: %VENCIMENTO%<br><br><br>
+    Username: <b>%USERNAME%</b> <br>
+    Password: <b>%PASSWORD%</b> <br><br><br>
+    You can also test our list by downloading it below:<br><br>
+    %LIST_URL%<br><br><br>
+    Enjoy your test, it is valid until: %EXPIRATION%<br><br><br>
     
-    Obrigado<br>
+    Thank you<br>
     WebPlayer.
     
     ");
+?>
