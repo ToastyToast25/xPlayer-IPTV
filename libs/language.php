@@ -1,66 +1,130 @@
 <?php
-define('HOME_BEMVINDO','Bem Vindo');
-define('HOME_TEXTO_BEMVINDO','Bem vindo ao webplayer faça o login abaixo utilizando seus dados.');
-define('HOME_BOTAO_LOGIN','Entrar');
-define('HOME_BOTAO_LOGIN','Entrar');
-define('HOME_BOTAO_TESTE','Solicitar Teste');
-define('HOME_TXT_LOGIN','Faça Seu Login');
-define('HOME_TXT_USER','Usuário');
-define('HOME_TXT_PASS','Senha');
-define('HOME_TXT_TESTE','Teste Grátis');
-define('HOME_TXT_TESTE_DESC','Cadastre-se e teste grátis');
-define('HOME_TXT_HORAS','horas.');
-define('HOME_CAMPO_WA','Informe seu WhastApp');
-define('HOME_CAMPO_NOME','Informe seu Nome');
-define('HOME_CAMPO_EMAIL','Informe seu Email');
+define('HOME_WELCOME', 'Welcome');
+define('HOME_WELCOME_TEXT', 'Welcome to the web player, please log in below using your credentials.');
+define('HOME_BUTTON_LOGIN', 'Login');
+define('HOME_BUTTON_TEST', 'Request Test');
+define('HOME_TXT_LOGIN', 'Login');
+define('HOME_TXT_USER', 'Username');
+define('HOME_TXT_PASS', 'Password');
+define('HOME_TXT_TEST', 'Free Test');
+define('HOME_TXT_TEST_DESC', 'Register and get a free test');
+define('HOME_TXT_HOURS', 'hours.');
+define('HOME_FIELD_WA', 'Enter your WhatsApp');
+define('HOME_FIELD_NAME', 'Enter your Name');
+define('HOME_FIELD_EMAIL', 'Enter your Email');
 
+define('MOVIES_SUGGESTED', 'Suggested Movies');
+define('SERIES_SUGGESTED', 'Suggested Series');
+define('CHANNELS_LIVE', 'Live Channels');
+define('LIVE', 'Live');
 
-define('FILMES_SUGERIDOS','Filmes Sugeridos');
-define('SERIES_SUGERIDOS','Séries Sugeridas');
-define('CANAIS_AO_VIVO','Canais ao Vivo');
-define('AO_VIVO','Ao Vivo');
+define('MENU_TV_LIVE', 'Live TV');
+define('MENU_HOME', 'Home');
+define('MENU_SERIES', 'Series');
+define('MENU_RENEW', 'Renew Subscription');
+define('MENU_LOGOUT', 'Logout');
 
-define('MENU_TV_AO_VIVO','TV ao Vivo');
-define('MENU_HOME','Home');
-define('MENU_SERIES','Séries');
-define('MENU_RENOVAR','Renovar Assinatura');
-define('MENU_SAIR','Sair');
+define('TXT_WELCOME', 'Welcome');
+define('TXT_SCREENS', 'Allowed Screens');
+define('TXT_VALIDITY', 'Access Valid Until');
+define('TXT_REMAINING', 'Remaining');
+define('TXT_SERIES', 'Series');
+define('TXT_SERIE', 'Series');
+define('TXT_SEASON', 'Season');
+define('TXT_EPISODE', 'Episode');
+define('TXT_ALL_SEASONS', 'View All Seasons');
+define('TXT_CATEGORIES', 'Categories');
+define('TXT_DURATION', 'DURATION');
+define('TXT_FULLSCREEN', 'FULLSCREEN');
+define('TXT_INFO', 'Information');
+define('TXT_DIRECTOR', 'Director');
+define('TXT_CAST', 'Cast');
+define('TXT_GENRE', 'Genre');
+define('TXT_MOVIES_SUGGESTION', 'Suggested Movies');
+define('TXT_CHANNELS_SUGGESTION', 'Similar Channels');
+define('TXT_SUBSCRIPTION', 'Subscription');
+define('TXT_MONTH', '/ Month');
+define('TXT_CURRENCY', 'R$');
 
-define('TXT_BEMVINDO','Bem Vindo');
-define('TXT_TELAS','Telas Permitidas');
-define('TXT_VALIDADE','Acesso Válido Até');
-define('TXT_RESTAM','Restam');
-define('TXT_SERIES','Séries');
-define('TXT_SERIE','Série');
-define('TXT_TEMPORADA','Temporada');
-define('TXT_EPISODIO','Episódio');
-define('TXT_TODAS_TEMPORADAS','Ver Todas as Temporadas');
-define('TXT_CATEGORIAS','Categorias');
-define('TXT_DURACAO','DURAÇÃO');
-define('TXT_FULLSCREEN','TELA CHEIA');
-define('TXT_INFO','Informações');
-define('TXT_DIRETOR','Diretor');
-define('TXT_ELENCO','Elenco');
-define('TXT_GENERO','Genero');
-define('TXT_FILMES_SUGESTAO','Filmes Sugeridos');
-define('TXT_CANAIS_SUGESTAO','Canais Semelhantes');
-define('TXT_ASSINATURA','Assinatura');
-define('TXT_MES','/ Mês');
-define('TXT_MOEDA','R$');
+define('TAG_VOD', 'VODs');
+define('TXT_COPYRIGHT', ' All Rights Reserved.');
 
-define('TAG_VOD','Vods');
-define('TXT_COPYRIGHT',' All Rights Reserved.');
+define('ERROR_VIDEO_FORMAT', 'Sorry, your browser does not support this video format yet');
+define('ERROR_VIDEO_FORMAT_DESC', 'We are sorry for this inconvenience, some browsers still do not support all available video formats.');
 
-define('ERROR_FORMATO_VIDEO','Desculpe seu navegador ainda não suporta este formato de vídeo');
-define('ERROR_FORMATO_VIDEO_DESC','Sentimos muito por esse inconveniente alguns navegadores ainda não suportam todos os formatos de vídeos disponíveis.');
+define('TXT_SUBSCRIPTION_DESC', 'Payments via Bank Slip may take up to 24 business hours to be approved, and the confirmation is automatic by the issuing bank. Compensations from Tuesday to Saturday.');
+define('TXT_SUBSCRIPTION_DISCOUNT_DESC', '* To remove adult channels from the list, request exclusion from your list. <br>If necessary, contact our team via WhatsApp.');
+define('BUTTON_WHATSAPP', 'WHATSAPP SUPPORT');
+define('BUTTON_SUBSCRIBE', 'Subscribe');
+define('PLAN_DESCRIPTION', '<li>±6,000 Channels, Movies, and Series</li>
+                                <li>SD, HD, and FULL HD Channels</li>
+                                <li>Adult Channels (Optional)</li>
+                                <li>Cartoons, Sports, and Religious Channels</li>
+                                <li>Brazilian Channels</li>
+                                <li>Watch Anywhere</li>');
+?>
+<?php
+define('HOME_WELCOME', 'Welcome');
+define('HOME_WELCOME_TEXT', 'Welcome to the web player, please log in below using your credentials.');
+define('HOME_BUTTON_LOGIN', 'Login');
+define('HOME_BUTTON_TEST', 'Request Test');
+define('HOME_TXT_LOGIN', 'Login');
+define('HOME_TXT_USER', 'Username');
+define('HOME_TXT_PASS', 'Password');
+define('HOME_TXT_TEST', 'Free Test');
+define('HOME_TXT_TEST_DESC', 'Register and get a free test');
+define('HOME_TXT_HOURS', 'hours.');
+define('HOME_FIELD_WA', 'Enter your WhatsApp');
+define('HOME_FIELD_NAME', 'Enter your Name');
+define('HOME_FIELD_EMAIL', 'Enter your Email');
 
-define('TXT_DESCRICAO_ASSINATURA','Pagamentos via Boleto Bancário podem levar até 24 horas úteis para serem aprovados e a sua confirmação é automática pelo banco emissor. Compensações de Terça à Sábado.');
-define('TXT_DESCRICAO_ASSINATURA_DESCONTO','* Para a retirada de canais adultos da lista, deve ser solicitado a exclusão de sua lista. <br>Caso necessário, contate nossa equipe através do whatsapp.');
-define('BOTAO_WHATSAPP','ATENDIMENTO VIA WHATSAPP');
-define('BOTAO_ASSINAR','Assinar');
-define('DESCRICAO_PLANOS','<li>±6.000  Canais, Filmes e Séries</li>
-                                <li>Canais SD, HD e FULL HD</li>
-                                <li>Canais Adultos (Opcional)</li>
-                                <li>Desenhos, Esportes e Religiosos</li>
-                                <li>Canais Brasileiros</li>
-                                <li>Assista Onde Quiser</li>');
+define('MOVIES_SUGGESTED', 'Suggested Movies');
+define('SERIES_SUGGESTED', 'Suggested Series');
+define('CHANNELS_LIVE', 'Live Channels');
+define('LIVE', 'Live');
+
+define('MENU_TV_LIVE', 'Live TV');
+define('MENU_HOME', 'Home');
+define('MENU_SERIES', 'Series');
+define('MENU_RENEW', 'Renew Subscription');
+define('MENU_LOGOUT', 'Logout');
+
+define('TXT_WELCOME', 'Welcome');
+define('TXT_SCREENS', 'Allowed Screens');
+define('TXT_VALIDITY', 'Access Valid Until');
+define('TXT_REMAINING', 'Remaining');
+define('TXT_SERIES', 'Series');
+define('TXT_SERIE', 'Series');
+define('TXT_SEASON', 'Season');
+define('TXT_EPISODE', 'Episode');
+define('TXT_ALL_SEASONS', 'View All Seasons');
+define('TXT_CATEGORIES', 'Categories');
+define('TXT_DURATION', 'DURATION');
+define('TXT_FULLSCREEN', 'FULLSCREEN');
+define('TXT_INFO', 'Information');
+define('TXT_DIRECTOR', 'Director');
+define('TXT_CAST', 'Cast');
+define('TXT_GENRE', 'Genre');
+define('TXT_MOVIES_SUGGESTION', 'Suggested Movies');
+define('TXT_CHANNELS_SUGGESTION', 'Similar Channels');
+define('TXT_SUBSCRIPTION', 'Subscription');
+define('TXT_MONTH', '/ Month');
+define('TXT_CURRENCY', '$');
+
+define('TAG_VOD', 'VODs');
+define('TXT_COPYRIGHT', ' All Rights Reserved.');
+
+define('ERROR_VIDEO_FORMAT', 'Sorry, your browser does not support this video format yet');
+define('ERROR_VIDEO_FORMAT_DESC', 'We are sorry for this inconvenience, some browsers still do not support all available video formats.');
+
+define('TXT_SUBSCRIPTION_DESC', 'Payments via Bank Slip may take up to 24 business hours to be approved, and the confirmation is automatic by the issuing bank. Compensations from Tuesday to Saturday.');
+define('TXT_SUBSCRIPTION_DISCOUNT_DESC', '* To remove adult channels from the list, request exclusion from your list. <br>If necessary, contact our team via WhatsApp.');
+define('BUTTON_WHATSAPP', 'WHATSAPP SUPPORT');
+define('BUTTON_SUBSCRIBE', 'Subscribe');
+define('PLAN_DESCRIPTION', '<li>±6,000 Channels, Movies, and Series</li>
+                                <li>SD, HD, and FULL HD Channels</li>
+                                <li>Adult Channels (Optional)</li>
+                                <li>Cartoons, Sports, and Religious Channels</li>
+                                <li>Brazilian Channels</li>
+                                <li>Watch Anywhere</li>');
+?>

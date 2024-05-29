@@ -3,123 +3,118 @@ date_default_timezone_set("America/Sao_Paulo"); // Timezone
 ini_set("allow_url_fopen", 1);
 ini_set("display_errors", 0);
 error_reporting(0);
-ini_set("track_errors","0");
+ini_set("track_errors", "0");
 
 require_once("libs/config.php");
-require_once("libs/idioma.php");
+require_once("libs/language.php");
 
-$vl1 = explode(".",$valor1);
-$vl2 = explode(".",$valor2);
-$vl3 = explode(".",$valor3);
-$vl4 = explode(".",$valor4);
+$val1 = explode(".", $value1);
+$val2 = explode(".", $value2);
+$val3 = explode(".", $value3);
+$val4 = explode(".", $value4);
 // END
 
-// Funções do Sistema
+// System Functions
 
-function apixtream($url_api){	
-$ch = curl_init();	
-$timeout = 10;	
-curl_setopt ($ch, CURLOPT_URL, $url_api);	
-curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);	
-curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, $timeout);	
-$retorno = curl_exec($ch);	
-curl_close($ch);	
-return $retorno;
+function apiXtream($url_api) {  
+    $ch = curl_init();  
+    $timeout = 10;  
+    curl_setopt($ch, CURLOPT_URL, $url_api);  
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);  
+    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);  
+    $response = curl_exec($ch);  
+    curl_close($ch);  
+    return $response;
 }
 
-function gerar_hash($length) {
-$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ' . rand(0, 99999);
-$randomString = '';
-for ($i = 0; $i < $length; $i++) {
-  $randomString .= $characters[rand(0, strlen($characters) - 1)];
-}
-return $randomString;
-}
-
-function limitar_texto($texto, $limite){
-  $contador = strlen($texto);
-  if ( $contador >= $limite ) {      
-    $texto = substr($texto, 0, strrpos(substr($texto, 0, $limite), ' ')) . '';
-    return $texto;
-  }
-  else{
-    return $texto;
-  }
-} 
-
-function ds($ds) {
-	
-	$dataent = explode(" ",$ds);
-	$dsent1 = $dataent[0];
-	$datas = explode("-",$dsent1);
-	
-	$datacerta = $datas[2] . '/'.$datas[1].'/'.$datas[0];
-	
-	return $datacerta . ' ' . $dataent[1];
-	
+function generate_hash($length) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ' . rand(0, 99999);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, strlen($characters) - 1)];
+    }
+    return $randomString;
 }
 
-function avaliacao($avs) {
-	
-	if($avs == 0){
-		$res = '<i class="fa fa-star-o"></i>
+function limit_text($text, $limit) {
+    $count = strlen($text);
+    if ($count >= $limit) {      
+        $text = substr($text, 0, strrpos(substr($text, 0, $limit), ' ')) . '';
+        return $text;
+    } else {
+        return $text;
+    }
+}
+
+function format_date($date) {  
+    $date_parts = explode(" ", $date);
+    $date_part = $date_parts[0];
+    $date_elements = explode("-", $date_part);
+    
+    $formatted_date = $date_elements[2] . '/' . $date_elements[1] . '/' . $date_elements[0];
+    
+    return $formatted_date . ' ' . $date_parts[1];
+}
+
+function rating($ratings) {
+    if ($ratings == 0) {
+        $res = '<i class="fa fa-star-o"></i>
                 <i class="fa fa-star-o"></i>
                 <i class="fa fa-star-o"></i>
                 <i class="fa fa-star-o"></i>
                 <i class="fa fa-star-o"></i>';
-	}
-	if(($avs >= 1) && ($media <= 1.99)){
-		$res = '<i class="fa fa-star"></i>
+    }
+    if (($ratings >= 1) && ($ratings <= 1.99)) {
+        $res = '<i class="fa fa-star"></i>
                 <i class="fa fa-star-o"></i>
                 <i class="fa fa-star-o"></i>
                 <i class="fa fa-star-o"></i>
                 <i class="fa fa-star-o"></i>';
-	}
-	if(($avs >= 2) && ($media <= 2.99)){
-		$res = '<i class="fa fa-star"></i>
+    }
+    if (($ratings >= 2) && ($ratings <= 2.99)) {
+        $res = '<i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star-o"></i>
                 <i class="fa fa-star-o"></i>
                 <i class="fa fa-star-o"></i>';
-	}
-	if(($avs >= 3) && ($media <= 3.99)){
-		$res = '<i class="fa fa-star"></i>
+    }
+    if (($ratings >= 3) && ($ratings <= 3.99)) {
+        $res = '<i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star-o"></i>
                 <i class="fa fa-star-o"></i>';
-	}
-	if(($avs >= 4) && ($media <= 4.99)){
-		$res = '<i class="fa fa-star"></i>
+    }
+    if (($ratings >= 4) && ($ratings <= 4.99)) {
+        $res = '<i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star-o"></i>';
-	}
-	if(($avs >= 5)){
-		$res = '<i class="fa fa-star"></i>
+    }
+    if (($ratings >= 5)) {
+        $res = '<i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>';
-	}
-	return $res;
-
+    }
+    return $res;
 }
 
-if($_GET['acao'] == 'sair') {
-  session_unset();
-  session_destroy();
-  setcookie('xuserm');
-  setcookie('xpwdm');
-  setcookie('xstatusm');
-  setcookie('xconnm');
-  setcookie('xtestem');
-  setcookie('xdataexpm');
-  header("Location: index.php");	
+if ($_GET['action'] == 'logout') {
+    session_unset();
+    session_destroy();
+    setcookie('xuserm');
+    setcookie('xpwdm');
+    setcookie('xstatusm');
+    setcookie('xconnm');
+    setcookie('xtestem');
+    setcookie('xdataexpm');
+    header("Location: index.php");  
 }
 
-function thor($action, $string) {
+function encrypt_decrypt($action, $string) {
     $output = false;
     $encrypt_method = "AES-256-CBC";
     $secret_key = '9991';
@@ -127,12 +122,12 @@ function thor($action, $string) {
     // hash
     $key = hash('sha256', $secret_key);
     
-    // iv - método de criptografia AES-256-CBC espera 16 bytes - senão você receberá um aviso
+    // iv - AES-256-CBC expects 16 bytes - otherwise you will get a warning
     $iv = substr(hash('sha256', $secret_iv), 0, 16);
-    if ( $action == 'encode' ) {
+    if ($action == 'encode') {
         $output = openssl_encrypt($string, $encrypt_method, $key, 0, $iv);
         $output = base64_encode($output);
-    } else if( $action == 'decode' ) {
+    } else if ($action == 'decode') {
         $output = openssl_decrypt(base64_decode($string), $encrypt_method, $key, 0, $iv);
     }
     return $output;
